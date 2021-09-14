@@ -1,0 +1,15 @@
+[package]
+name = "aya-example-lsm"
+version = "0.1.0"
+edition = "2018"
+publish = false
+
+[dependencies]
+aya = { git = "https://github.com/vadorovsky/aya", branch="lsm" }
+# aya = { path = "../../aya/aya" }
+aya-example-lsm-common = { path = "../aya-example-lsm-common", features=["userspace"] }
+anyhow = "1.0.42"
+
+[[bin]]
+name = "aya-example-lsm"
+path = "src/main.rs"

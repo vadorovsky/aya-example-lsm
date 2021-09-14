@@ -1,0 +1,25 @@
+[package]
+name = "aya-example-lsm-ebpf"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+# aya-bpf = { path = "../../aya/bpf/aya-bpf" }
+# aya-bpf-cty = { path = "../../aya/bpf/aya-bpf-cty" }
+aya-bpf = { git = "https://github.com/vadorovsky/aya", branch = "lsm" }
+aya-bpf-cty = { git = "https://github.com/vadorovsky/aya", branch = "lsm" }
+aya-example-lsm-common = { path = "../aya-example-lsm-common" }
+
+[[bin]]
+name = "aya-example-lsm"
+path = "src/main.rs"
+
+[profile.dev]
+panic = "abort"
+overflow-checks = false
+
+[profile.release]
+panic = "abort"
+
+[workspace]
+members = []
